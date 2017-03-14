@@ -860,7 +860,7 @@ footer {
 .f-body h4 {
   font-size: 15px;
   font-family: "Roboto", sans-serif;
-  font-weight: 700;
+  font-weight: 600;
   color: rgb(255, 255, 255);
   line-height: 1.733;
   letter-spacing: 0.05em;
@@ -869,8 +869,10 @@ footer {
 
 .f-body > .row {
   padding-top: 3.8em;
+  margin-bottom: 2.7em;
 }
 
+///logo blokas
 .logo-and-tajam {
   position: relative;
   display: inline-block;
@@ -895,7 +897,7 @@ footer {
   vertical-align: super;
   position: absolute;
   display: inline-block;
-  padding-left: 50px;
+  padding-left: 55px;
   top: 50%;
   transform: translateY(-56%);
   margin-bottom: 1em;
@@ -905,6 +907,8 @@ footer {
   margin-top: 0.6em;
 }
 
+
+//lokacijos blokas
 .location p {
   font-size: 14px;
   font-family: "Roboto", sans-serif;
@@ -913,12 +917,38 @@ footer {
   line-height: 1.857;
   letter-spacing: 0.025em;
   margin-top: 1.6em;
-
 }
+
+.location > div {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 2.2em;
+}
+
+.location > div:last-child {
+  margin-top: 0;
+}
+
+.location img {
+  display: inline-block;
+  margin-top: 2px;
+}
+
+.location > div > p {
+  padding-left: 1em;
+  margin-top: 0;
+}
+
+.location div:first-of-type > p {
+  margin-bottom: 0.5em;
+}
+
+
+//submit blokas
 
 .button-with-plane {
   width: 72px;
-  height: 48px;
+  height: 46px;
   background-image: url('../images/paperplane.png');
   background-position: center;
   background-repeat: no-repeat;
@@ -926,29 +956,105 @@ footer {
   border-style: none;
 }
 
+.button-with-plane {
+  padding-bottom: 1.18em;
+}
 
+.subscription > div:first-of-type {
+  margin-top: 2em;
+}
+.subscribe {
+  font-size: 14px;
+  font-family: "Roboto";
+  font-weight: 300;
+  color: rgba(65, 61, 75, 0.502);
+  border: 1px solid rgba(65, 61, 75, 0.1);
+  letter-spacing: 0.05em;
+  width: 15em;
+  line-height: 1.2;
+  padding-top: 1em;
+  padding-left: 1.6em;
+  padding-bottom: 1em;
+  background-color: transparent;
+  border: 1px solid #9a93ac;
+}
 
+.subscription textarea:focus, input:focus {
+    color: white;
+    outline: none;
+    border:1px solid lightgrey;
+    box-shadow: 0 0 2px #719ECE;
+}
 
 //////icons social/////
 .icon-dribbble:before { content: "\e904"; }
-
 .icon-facebook:before { content: "\e907"; }
-
 .icon-twitter:before { content: "\e908"; }
-
 .icon-instagram:before { content: "\e909"; }
 .icon-google:before { content: "\e90a"; }
-
 .icon-youtube:before { content: "\e90b"; }
 
+.social-ikonos {
+  margin-top: 1.3em;
+}
+
+.social-ikonos > a {
+  text-decoration: none;
+  color: white;
+}
+
+.social-ikonos > a:hover {
+  text-decoration: none;
+  color: grey;
+}
+
+.social-ikonos > a > * {
+  display: inline-block;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 50px;
+  padding: 10px;
+}
+
+.row .icon-dribbble {
+  display: inline-block;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 50px;
+  padding: 10px 12px;
+}
 
 
+////// bottom links
+
+.bottom-links {
+  padding-bottom: 4em;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.025em;
+  font-size: 14px;
+}
 
 .bottom-links a {
   display: inline-block;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  padding-right: 2em;
+}
+
+.bottom-links a:hover {
+  color: grey;
 }
 
 .bottom-links span {
   display: inline-block;
   float: right;
+}
+
+////// mazas ekranas - copyright alignment
+
+@media (max-width: 650px) {
+  .bottom-links span {
+    display: inline-block;
+    float: none;
+    margin-top: 1em;
+  }
 }
