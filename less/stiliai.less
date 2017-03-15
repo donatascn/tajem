@@ -32,7 +32,9 @@
 // end
 
 
-
+//**************************************************
+//************************************************** START
+//**************************************************
 body {
   color: white;
 
@@ -94,8 +96,6 @@ nav {
   padding-left: 50px;
   top: 50%;
   transform: translateY(-69%);
-
-
 }
 
 
@@ -129,9 +129,9 @@ nav a:active {
   text-decoration: none;
 }
 
-//*************************************
-//**************KARUSELE
-//*************************************
+//*******************************************
+//**************KARUSELE*********************
+//*******************************************
 }
 .home {
   background-image: url('../images/imageTop2.jpg');
@@ -270,9 +270,9 @@ nav a:active {
 
 }
 
-//********************************************
-////////////////////////////////////OUR STORY
-//********************************************
+//**************************************************
+//************************************************** OUR STORY
+//**************************************************
 .ourStory {
   background-color: rgb(255, 255, 255);
 }
@@ -408,8 +408,9 @@ nav a:active {
   color: rgba(255, 255, 255, 0.5);
 
 }
-//////////////////// EXPERTISE /////
-/////***************///////////////
+//**************************************************
+//************************************************** EXPERTISE
+//**************************************************
 
 
 .expertise {
@@ -561,8 +562,9 @@ h4 {
   padding-top: 4px;
 }
 
-////////////////////////////// **TEAM**  ///////////////////
-//********************
+//**************************************************
+//************************************************** TEAM
+//**************************************************
 
 .team {
   background-image: url('../images/teamBackground.jpg');
@@ -692,26 +694,74 @@ h4 {
   }
 
 }
-//////////////////////////////////////////////////////////////////////////////// OUR WORKS
+
+
+//**************************************************
+////////////////////////////////////////// OUR WORKS
+//**************************************************
+
+
+
 .our-works {
   background-color: #ffffff;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  width: 100%;
 }
 
 .our-works-inner {
-  margin: 0 0;
+  margin: 0;
   max-width: 100%;
   height: auto;
-  padding: 0 0;
+  padding: 0;
   position: relative;
   text-align: center;
 }
 
+.our-works-body .container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+}
+
+.our-works-body .container .row {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+}
+
+.projektai img {
+  display: block;
+  margin: 0 auto;
+}
+
+.projektai > div {
+  margin: 0;
+  padding: 0;
+}
+
+
+@media (min-width: 1200px){
+  .container {
+    width: 100%;
+  }
+}
+
+//load more
+// div rodyma reguoliuoja jQuery
+.projektai div {
+  display: none;
+}
+// nerodom COllapse mygtuko, kol nenuspaudziame LoadMore
+.our-works-body .suskleisti {
+  display: none;
+}
 
 //*****************************************
-///////////////////////////////TESTIMONIALS
+//******************TESTIMONIALS***********
 //*****************************************
 
 .testimonials {
@@ -767,7 +817,6 @@ h4 {
     bottom: 0;
     max-width: 100%;
     min-height: 160px;
-
 }
 
 .testimonials-body .carousel-indicators li {
@@ -796,9 +845,7 @@ h4 {
     overflow: hidden;
     transform: translateY(16%);
 }
-.testimonials-body .carousel-inner {
-    min-height: 20em;
-}
+
 .testimonials-body .item blockquote {
     border-left: none;
     margin: 0;
@@ -820,6 +867,15 @@ h4 {
       transform: translateY(5%);
       margin-bottom: 30%;
   }
+
+  .testimonials-body .carousel-control.left {
+      bottom: 23%;
+  }
+
+  .testimonials-body .carousel-control.right {
+      bottom: 23%;
+  }
+
 }
 
 .quote {
@@ -885,9 +941,9 @@ h4 {
 //   }
 //
 // }
-//*****************************************
-///////////////////////////////CONTACTS
-//*****************************************
+//**************************************************
+//************************************************** CONTACTS
+//**************************************************
 
 .contact {
   background-color: white;
@@ -1048,8 +1104,9 @@ margin-top: 0;
   margin-top: 2em;
 }
 
-///////////////////////////////////////FOOTER
-/////////////////////////////////////////////////
+//**************************************************
+//************************************************** FOOTER
+//**************************************************
 
 footer {
   background-image: url('../images/imageBottom2.jpg');
@@ -1267,9 +1324,22 @@ footer {
 ////// mazas ekranas - copyright alignment
 
 @media (max-width: 650px) {
-  .bottom-links span {
-    display: inline-block;
-    float: none;
+  .bottom-links .help-terms {
+    display: flex;
+    justify-content: space-between;
     margin-top: 1em;
+  }
+
+  .help-terms > a {
+    padding: 0;
+  }
+
+  .bottom-links span {
+    margin-top: 1em;
+    float: none;
+  }
+
+  .bottom-links {
+    text-align: center;
   }
 }
