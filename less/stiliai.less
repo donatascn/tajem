@@ -25,43 +25,109 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-// font-family: 'Hammersmith One', sans-serif;
-// font-family: 'Playfair Display', serif;
-// font-family: 'Roboto', sans-serif;
 
-// end
 
 
 //**************************************************
 //************************************************** START
 //**************************************************
+
+
 body {
   color: white;
+}
 
+h3 {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: 'Playfair Display', sans-serif;
+  font-size: 22px;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
 }
 
 
 ///////////MOBILI NAVIGACIJA///////////////
+.mobile-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mobile-navigation {
+  width: 100%;
+  position: absolute;
+  background-color: white;
+  z-index: 1000;
+  padding-left: 0;
+  transform: translateX(-50%);
+
+}
 
 
+.mobile-navigation > li {
+  display: block;
+  padding: 1em;
+  color: black;
+  border-bottom:1px solid grey;
+  text-align: center;
+}
 
+.mobile-navigation > li > a {
+  color: grey;
+  text-decoration: none;
+  font-size: 1.5em;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: block;
+  width: 100%;
+  cursor: pointer;
 
+}
+//jQuery.on(click) naudojama klase.
+.toggle-mobile-navigation {
+  display:none;
+}
+
+.box-shadow-menu {
+  position: relative;
+  padding: 2em;
+  cursor: pointer;
+}
+
+.box-shadow-menu:before {
+  content: "";
+  position: absolute;
+  left: 1em;
+  top: 1.45em;
+  width: 2em;
+  height: 0.25em;
+  background: white;
+  box-shadow: 0 0.65em 0 0 white, 0 1.3em 0 0 white;
+}
 
 ///////////DESKTOP NAVIGACIJA///////////////
+
+//by default, desktopine navigacija buna paslepta
 .didele-nav {
   display: none;
 }
 
-@media (min-width: 786px) {
-.didele-nav {
-  display: relative;
-}
-nav {
-  position: relative;
-  justify-content: space-between;
-  display: flex;
-}
+@media (min-width: 768px) {
+  .didele-nav {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+  }
 
+  .mobile-nav {
+    display: none;
+  }
+  // nav {
+  //   position: ;
+  //   width: 100%
+  // }
+}
 .navigation {
   list-style: none;
   color: white;
@@ -70,16 +136,15 @@ nav {
   margin-top: 20px;
 }
 
-
 .navigation li {
   display:inline-block;
-
 }
 
-.logoSection {
+.logoSection, .mobile-logoSection {
   display: inline-block;
   position: relative;
   margin-top: 13px;
+  margin-left: 10px;
 }
 
 
@@ -90,16 +155,14 @@ nav {
   font-family: "Roboto", sans-serif;
   line-height: 1.2;
   font-weight: 100;
-  vertical-align: super;
   position: absolute;
   display: inline-block;
-  padding-left: 50px;
-  top: 50%;
-  transform: translateY(-69%);
+  padding-left: 55px;
+  transform: translateY(-120%);
 }
 
 
-nav li  a {
+.navigation li a {
   text-decoration: none;
   font-size: 13px;
   font-family: "Roboto", sans-serif;
@@ -112,7 +175,7 @@ nav li  a {
   display: block;
   padding: 10px 8px;
 }
-nav a:hover {
+.navigation a:hover {
   color: rgb(14, 173, 174);
   text-decoration: none;
 }
@@ -120,11 +183,11 @@ nav a:hover {
 a:visited {
   text-decoration: none;
 }
-nav a:link {
+.navigation a:link {
   text-decoration: none;
 }
 
-nav a:active {
+.navigation a:active {
   color: rgb(14, 173, 174);
   text-decoration: none;
 }
@@ -132,7 +195,7 @@ nav a:active {
 //*******************************************
 //**************KARUSELE*********************
 //*******************************************
-}
+
 .home {
   background-image: url('../images/imageTop2.jpg');
   background-repeat: no-repeat;
@@ -234,7 +297,7 @@ nav a:active {
   position:relative;
   margin: 0 auto;
   max-width: 972px;
-  padding: 0 15px
+  // padding: 0 15px
 
 }
 
@@ -296,6 +359,7 @@ nav a:active {
 }
 .ourStory-body {
   max-width: 100%;
+
 }
 
 #about {
@@ -317,7 +381,8 @@ nav a:active {
 
 .largeImage img {
   display: block;
-  margin: 0 auto;
+  margin: 1.7em auto auto;
+
   }
 
 .ourStory .mygtukas:hover {
@@ -331,16 +396,27 @@ nav a:active {
     padding-top: 7%;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 992px) {
   .largeImage img {
     width: 30%;
     height: auto;
-    margin-bottom: 5%;
+    margin: auto auto 5%;
   }
+
   .ourStoryPar .mygtukas {
     margin: 2em auto 4em;
   }
+  .ourStory-body .container {
+    text-align: center;
+  }
+
 }
+
+
+// *********************************************************************
+// ********************************************************************* Watch our story
+// *********************************************************************
+
 
 .watchOurStory {
   background-image: url(../images/imageVideo2.jpg);
@@ -431,13 +507,7 @@ nav a:active {
 }
 
 .expertise h3 {
-  text-transform: uppercase;
-  font-weight: bold;
-  font-family: 'Playfair Display', sans-serif;
-  font-size: 22px;
-  letter-spacing: 0.05em;
   color: rgb(65, 61, 75);
-  line-height: 1.2;
   margin-top: 8%;
   margin-bottom: 2%;
 }
@@ -589,13 +659,7 @@ h4 {
 
 .team-body > h3 {
   display: inline-block;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-family: 'Playfair Display', sans-serif;
   color: rgb(255, 255, 255);
-  font-size: 22px;
-  letter-spacing: 0.05em;
-  line-height: 1.2;
   margin-top: 3.10em;
   margin-bottom: 0;
 
@@ -666,7 +730,7 @@ h4 {
 
 // media queries for TEAM
 
-@media (min-width: 700px) {
+@media (min-width: 768px) {
   .teamipad {
     display: flex;
     flex-direction: row;
@@ -679,7 +743,7 @@ h4 {
   }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 992px) {
   .komanda {
     display: flex;
     flex-direction: row
@@ -697,7 +761,7 @@ h4 {
 
 
 //**************************************************
-////////////////////////////////////////// OUR WORKS
+//**************************************************OUR WORKS
 //**************************************************
 
 
@@ -719,6 +783,45 @@ h4 {
   text-align: center;
 }
 
+.our-works-heading {
+  color: #413d4b;
+  display: flex;
+  position: relative;
+  margin-left: 20%;
+  margin-right: 20%;
+  text-align: left;
+  flex-wrap: wrap;
+  // margin-top: 3.5em;
+}
+
+.our-works-heading > h3 {
+  display: inline-block;
+  margin-top: 3.1em;
+  margin-bottom: 3.1em;
+  position: relative;
+}
+
+.our-works-heading > p {
+  display: inline-block;
+  align-self: center;
+  padding: 1em 0;
+
+
+  // position: relative;
+}
+.our-works-heading > p > a {
+  color: #413d4b;
+}
+
+
+.our-works-heading > p > a:hover {
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+// .our-works-body reikia overridinti default container bootstrap nustatyma, kad neatsirastu slinkties juosta
+// kolkas dar neissiaiskinau, kurios skilties containeris iseina uz ribu. 
 .our-works-body .container {
   width: 100%;
   margin: 0;
@@ -743,7 +846,7 @@ h4 {
   padding: 0;
 }
 
-
+// reikia overridinti bootstrapo defaults
 @media (min-width: 1200px){
   .container {
     width: 100%;
@@ -755,13 +858,9 @@ h4 {
 .projektai div {
   display: none;
 }
-// nerodom COllapse mygtuko, kol nenuspaudziame LoadMore
-.our-works-body .suskleisti {
-  display: none;
-}
 
 //*****************************************
-//******************TESTIMONIALS***********
+//*****************************************TESTIMONIALS
 //*****************************************
 
 .testimonials {
@@ -924,26 +1023,11 @@ h4 {
   text-transform: uppercase;
 }
 
-
-// #quote-carousel .item blockquote p:before {
-//     content: "\f10d";
-//     font-family: 'Fontawesome';
-//     float: left;
-//     margin-right: 10px;
-// }
-
-// @media (min-width: 700px) {
-//   .testimonials-body img {
-//     display: block;
-//     border-radius: 100%;
-//     max-width: 50%;
-//     max-height: auto;
-//   }
-//
-// }
 //**************************************************
-//************************************************** CONTACTS
+//************************************************** CONTACT
 //**************************************************
+
+
 
 .contact {
   background-color: white;
@@ -973,10 +1057,10 @@ h4 {
   text-align: left;
 }
 
-.forma > *  {
+.forma > h3, form > *  {
   box-sizing: border-box;
   position: relative;
-  display: inline-block;
+  display: block;
   width: 100%;
 }
 
@@ -992,7 +1076,7 @@ h4 {
 }
 
 //perejimas is mobile i desktop.
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .forma {
     max-width: 49%;
     margin-left: 0;
@@ -1005,23 +1089,17 @@ h4 {
     margin-left: 3%;
 
   }
+  .clients h3 {
+    padding-left: 3.1em;
+  }
 }
 
 .contact h3 {
-  font-family: "Playfair Display", sans-serif;
   color: rgb(65, 61, 75);
-  line-height: 1.2;
-  font-size: 22px;
-  font-weight: 700;
   letter-spacing: 0.05em;
-  text-transform: uppercase;
   margin-top: 2.35em;
   margin-bottom: 1.3em;
   text-align: left;
-}
-
-.clients h3 {
-  padding-left: 3.1em;
 }
 
 .redaguojami-laukai {
@@ -1079,30 +1157,34 @@ margin-top: 0;
 
 
 
-//Overriding bootstrap CSS for divs holding images//////
+//Overriding bootstrap CSS for divs that are holding images//////
 .clientImg {
+  box-sizing: content-box;
   padding-right: 0;
-  padding-top: 1em;
+  // padding-top: 1em;
   padding-bottom: .5em;
+  padding-left: 0;
   margin: 0.5em auto;
+  min-height: 70px;
+  text-align: center;
 }
 
-.clients div:nth-child(-n +2) {
-  margin-top: 0;
-  padding-top: 0.5em;
-}
-
-.clients div:nth-child(7) {
-  margin-top: 2em;
-}
-
-.clients div:nth-child(8) {
-  margin-top: 2em;
-}
-
-.clients div:nth-child(9) {
-  margin-top: 2em;
-}
+// .clients div:nth-child(-n +2) {
+//   margin-top: 0;
+//   padding-top: 0.5em;
+// }
+//
+// .clients div:nth-child(7) {
+//   margin-top: 2em;
+// }
+//
+// .clients div:nth-child(8) {
+//   margin-top: 2em;
+// }
+//
+// .clients div:nth-child(9) {
+//   margin-top: 2em;
+// }
 
 //**************************************************
 //************************************************** FOOTER

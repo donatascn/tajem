@@ -1,3 +1,15 @@
+//paspaudus and burgerio, pakeicia nav listo klase, kurioje yra display: none;
+$("div.box-shadow-menu").on("click", function() {
+  // event.preventDefault();
+  $("ul.mobile-navigation").toggleClass('toggle-mobile-navigation');
+});
+
+$(".mobile-navigation > li > a").on("click", function() {
+  $("ul.mobile-navigation").toggleClass('toggle-mobile-navigation');
+});
+
+
+
 $(".carousel").on("touchstart", function(event){
         var xClick = event.originalEvent.touches[0].pageX;
     $(this).one("touchmove", function(event){
@@ -15,22 +27,22 @@ $(".carousel").on("touchstart", function(event){
 });
 
 
-  $("document").ready(function () {
-    $(".navigation > li > a").on("click", function(event) {
-      if (this.hash !== "") {
-        // Prevent default anchor click behavior
-        event.preventDefault();
-        var hash = this.hash;
+$("document").ready(function () {
+  $(".navigation > li > a").on("click", function(event) {
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+      var hash = this.hash;
 
-        $('html, body').animate({scrollTop: $(hash).offset().top}, 800, function(){
+      $('html, body').animate({scrollTop: $(hash).offset().top}, 800, function(){
 
-          // Add hash (#) to URL when done scrolling (default click behavior)
-          window.location.hash = hash;
-        });
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
   } // End if
-});
-
   });
+
+});
 
 
 
@@ -41,16 +53,12 @@ $(function () {
   {
   $(".projektai > div").slice(0, 6).show();
 
-  $(".our-works-body > .isskleisti").on('click', function (e) {
+  $(".our-works-body > .mygtukas").on('click', function (e) {
       e.preventDefault();
       $(".projektai > div:hidden").slice(0, 6).slideDown();
       if ($(".projektai > div:hidden").length == 0) {
           $("#loadMore").fadeOut('slow');
       }
-
-      // $('html,body').animate({
-      //     scrollTop: $(this).offset().top
-      // }, 1500);
   })
 
 
@@ -92,17 +100,17 @@ $(function () {
 
 });
 
-$('a[href=#top]').click(function () {
-  $('body,html').animate({
-      scrollTop: 0
-  }, 600);
-  return false;
-});
-
-$(window).scroll(function () {
-  if ($(this).scrollTop() > 50) {
-      $('.totop a').fadeIn();
-  } else {
-      $('.totop a').fadeOut();
-  }
-});
+// $('a[href=#top]').click(function () {
+//   $('body,html').animate({
+//       scrollTop: 0
+//   }, 600);
+//   return false;
+// });
+//
+// $(window).scroll(function () {
+//   if ($(this).scrollTop() > 50) {
+//       $('.totop a').fadeIn();
+//   } else {
+//       $('.totop a').fadeOut();
+//   }
+// });
